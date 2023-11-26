@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+    <name>Laposta</name>
+    <author>Maurice van Loon</author>
+    <creationDate>November 2023</creationDate>
+    <copyright>(C) 2023 Open Source Matters, Inc.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>maurice@yournextconcepts.com</authorEmail>
+    <version>0.1</version>
+    <description>A simple module show the newest newsletter</description>
+    <files>
+        <filename module="mod_laposta">mod_laposta.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="api_key" type="text" default="" label="API Key" description="Enter your Laposta API Key here." size="40" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
