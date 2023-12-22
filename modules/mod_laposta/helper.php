@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 class ModLapostaHelper
 {
 
-	public static function getCurrentNewsletters($customCampaignId = null)
+	public static function getCurrentNewsletters($customCampaignId = null): array|string
 	{
 		try
 		{
@@ -40,7 +40,7 @@ class ModLapostaHelper
 
 			uasort($content,function($item1, $item2) {
 
-				return strtotime($item1['campaign']['delivery_ended']) > strtotime($item2['campaign']['delivery_ended']) ? -1:1;
+				return strtotime($item1['campaign']['delivery_ended']) < strtotime($item2['campaign']['delivery_ended']) ? 1:-1;
 			});
 
 			return  $content;
